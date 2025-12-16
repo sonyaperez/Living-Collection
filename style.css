@@ -1,0 +1,285 @@
+/* Designing for mobile screens. */
+@media screen and (min-width: 600px) {
+    .container {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+/* Uniform Design. */
+body {  
+    background-color: rgb(229, 150, 245);
+    margin: 0;
+    padding: 0;
+    font-family: VT323, monospace; /*Retro font.*/
+}
+
+/* Styling all the <a> elements; navigation bar design */
+a {
+    text-decoration: none;
+    text-shadow: 4px 4px 4px #000;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 30px;
+    width: 50%; 
+}
+
+.navcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: -108px; 
+    top: 0;
+    left: 0;
+}
+
+nav { 
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.nav {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item a:hover {
+    text-shadow: 1px 1px 1px #000; /*When user hovers over nav link, letter spacing 
+    inscreases and a shadow is added.*/
+    letter-spacing: 5px;
+}
+
+.item a:hover:before {
+    transform: scaleX(1);
+}
+
+
+
+/* Speech bubble for avatar on Desktop.*/
+.minisonya {
+    position: absolute;
+    top: 120px; 
+    left: 60px;  
+    width: auto;
+    height: 200px;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 2px 2px 0 #000;
+    opacity: 0;
+    transition: opacity 0.3s ease; /*Smooth fade in.*/
+}
+
+/*Once hovered.*/
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid white;
+    filter: drop-shadow(0 2px 0 #000000); /*Shadow for triangle part of 
+    speech bubble. Making sure it blends in.*/
+}
+
+/* Mobile speech bubble */
+@media (max-width: 600px) {
+    .speech-bubble {
+        top: 80px;
+        left: 80px;
+        padding: 6px 8px;
+        font-size: 14px;
+        border-radius: 6px;
+        border-width: 2px;
+        width: 30%;
+    }
+    .speech-bubble::after {
+        filter: drop-shadow(0 2px 0 #ffffff); /*Shadow for triangle part of 
+        speech bubble. On mobile, I want it to still blend it even when size has been adjusted.*/
+    }
+}
+
+
+
+/* Styling the image upload container.*/
+.uploadcontainer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    border: 2px dotted #ccc;
+    border-radius: 10px;
+    margin: 20px auto;
+    height: 200px;
+    background-color: beige;
+    width: 200px;
+}
+
+input[type="file"] {
+    display: none; 
+}
+
+/*Label styled as button.*/
+.addbutton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #ff6cc7;
+    color: white;
+    cursor: cell; /*Cursor changes to a + when button is hovered over.*/
+    border-radius: 5px;
+    margin: 0;
+}
+
+/*User preview of image before uploading.*/
+.image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    display: none;
+    margin: 0 auto;
+}
+
+/*Text explaining site.*/
+.protocoltext {
+    color: rgb(255, 255, 255);
+}
+
+/* Layout for mobile; responsive. A lot 
+of things have to decrease in size. */
+@media screen and (max-width: 600px) {
+
+    .protocoltext {
+        margin-left: 30px;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .navcontainer {
+        position: relative;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 0;
+    }
+
+    a {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .uploadcontainer {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .addbutton {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .minisonya {
+        position: relative;
+        top: 40px;
+        left: 20px;
+        margin: 20px auto;
+        width: 100px;
+        height: auto;
+    }
+
+    .speech-bubble {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 10px auto;
+        max-width: 90%;
+    }
+
+    .speech-bubble::after {
+        top: -12px;
+        bottom: auto;
+        border-bottom: 12px solid white;
+        border-top: 0;
+    }
+}
+
+/* Image grid for when image is added.*/
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding-bottom: 30px;
+}
+
+.image-grid img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: grab; /*Cursor changes to hand when hovering.*/
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /*Image gets bigger when hovered over.*/
+}
+
+.gallery {
+    height: 20px;
+}
+
+/*Making a delete button. The site will store whatever image was uploaded previously, 
+even upload refresh. Adding a delete button can clear the images and allow the user
+to start over.*/
+.delete-button {
+    width: 20%;
+    margin: 30px;
+    text-align: center;
+    background-color: #ff6cc7;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-family: VT323, monospace;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}

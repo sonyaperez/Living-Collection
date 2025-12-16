@@ -1,0 +1,126 @@
+/*Smooth scrolling for text reveal in JS.*/
+html {
+    scroll-behavior: smooth;
+}
+h1{
+    font-size: 60px;
+    margin-top: 120px;
+    margin-left:650px;
+}
+
+p{
+    margin-left: 500px;
+}
+
+/*Displaying images in a grid as the "gallery."*/
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-gap: 20px; /* Space between images. */
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding-bottom: 30px;
+}
+
+.image-grid img {
+    height: 210px;
+    width: 300px;
+    object-fit:fill; /*Images fill the grid without being cropped.*/ 
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 90px;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /*Image gets bigger when hovered over.*/
+}
+
+.project1heading{
+    font-size: 45px;
+    margin-left: 550px;
+}
+
+/*Uniform Design.*/
+body{  
+
+    margin: 0;
+    padding: 0;
+    font-family: VT323, monospace;
+
+}
+
+/*Color animation in JS.*/
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /*Full width.*/
+    height: 100vh;
+    z-index: -1; /* Moves canvas to the back.*/
+  }
+  
+/* Styling all the <a> elements; navigation bar design. */
+a {
+    text-decoration: none; /*No underlines.*/
+    text-shadow: 4px 4px 4px #000;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+
+.navcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /*Keep nav on the right.*/
+    align-items: flex-start;
+    margin-top: 10px;
+    position: absolute; /*Stays at top when scrolling down.*/
+    margin-left: -150px;
+    top: 0;
+    left: 0;
+}
+
+nav { 
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.nav {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item a:hover { 
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 5px;/*When hovering over link, letters space increases and adds a shadow.*/
+}
+
+.item a:hover:before {
+    transform: scaleX(1);
+}
+
+/*Last three paragraph hidden until user scrolls.*/
+.BeforeScroll
+{
+  height: 100px; 
+  width: 100%; 
+  display: none;
+}
+
+
+/*Last three paragraphs to show when scrolled.*/
+.AfterScroll
+{
+  height: 100px;
+  width: 100%; 
+  display: block;
+}

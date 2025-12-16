@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    box-sizing:border-box;
+    font-weight: 200;
+}
+/*Uniform Design.*/
+html, body{  
+    background-color: rgb(229, 150, 245);
+    font-family: VT323, monospace;
+    color: #fff;    
+    font-size: 25px;
+    padding: 25px;
+}
+
+
+/*Styling the jumping star gif. Sourced from tenor.com.*/
+.jumpingstar{
+    width: 80px;
+    opacity: 100%;
+    margin-top: -150px;
+    margin-left: 620px;
+}
+
+
+/* Styling all the <a> elements; navigation bar design. */
+a {
+    text-decoration: none; /*No underlines.*/
+    text-shadow: 4px 4px 4px #000;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+
+.navcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /*Nav on the left.*/
+    align-items: flex-start;
+    margin-top: 10px;
+    position: absolute; /*Stays at top when scrolling down.*/
+    margin-left: -150px;
+    top: 0;
+    left: 0;
+}
+
+nav { 
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.nav {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item a:hover { /*When hovering over link, letters space increases and adds a shadow.*/
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 5px;
+}
+
+.item a:hover:before {
+    transform: scaleX(1);
+}
+
+
+.heading{
+    font-size: 55px;
+    padding-left:470px;
+    margin-top: 100px;
+}
+
+header{
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left:600px;
+    padding-top: -0px;
+    font-size: 40px;
+
+}
+
+h1{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+p {
+    max-width: 650px;
+    margin: 0 auto 1.5em;
+    line-height: 1.6;
+}
+
+.word {
+    display: inline;            
+    opacity: 0;                  
+    transform: translateY(20px);  /*Start scrolling a bit below.*/
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.word.reveal {
+    opacity: 1;
+    transform: translateY(0);  /*When scrolled, words are revelaed smoothly.*/
+}
+
+#bottom{
+    margin-bottom: 100vh; /*Bit of space at bottom.*/
+}

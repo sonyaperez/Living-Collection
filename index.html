@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sonya's Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Importing Google Fonts.-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> <!--"Defer" is needed to run JS that is in body.-->
+
+    <!-- Importing VT323 font.-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+      /*Center h so that it appears under the nav bar.*/
+        h1, h2 {
+            text-align: center;
+            margin-top: 120px; /*Creates space below nav bar.*/
+            font-family: "VT323", monospace;
+        }
+    </style>
+</head>
+
+<body>
+<!--Making the Navigation Bar for other parts of the site.-->
+    <div class="navcontainer">
+        <nav>
+            <ul class="nav">
+                <li class="item"><a href="content.html">CONTENT</a></li> <!--Links to other page.-->
+                <li class="item"><a href="insights.html">INSIGHTS</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<!--Intro heading.-->
+    <h1>WELCOME TO<br>
+        SONYA'S GALLERY<h1>
+    
+<!--Bit of text that tells the user about the site and how they can add their own work.-->
+    <div class="protocoltext" id="protocoltext">
+        Hello and thanks for taking a look at my gallery! <br>
+        This is a collection of every take-home assignment <br>
+        I have completed for my CD Interaction class this semester. <br> 
+        Feel free to add an image of one of your own website designs here.<br>
+        It should be a combination of HTML, CSS, and JavaScript!<br>
+        The gallery will store it here to make this site a growing, collaborative digital gallery!<br>
+
+    </div>
+
+<!--The upload container.-->
+<div id="uploadcontainer" div class="uploadcontainer">
+    <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)"> <!--Input to upload image chosen.-->
+
+    <!--"Add" button-->
+    <label for="fileInput" class="addbutton">Add to Gallery</label>
+
+    <!--Preview when opened image-->
+    <img id="image-preview" src="#" alt="Image preview option" class="image-preview">
+</div>
+
+<!--When user adds image(s), display as grid.-->
+<div class="image-grid" id="gallery"></div> 
+
+
+<!--Displaying avatar of myself. Graphic created with the app "MyLittleStar."-->
+<img src="images/minisonya.png" class="minisonya" alt="pixel avatar of sonya"> <!--Detailed img description
+for accessibility.-->
+
+<!--Giving avatar a speech bubble.-->
+<div class="speech-bubble"></div>
+
+
+<!--Gallery container to display uploaded images -->
+<div id="gallery" class="gallery"></div>
+
+
+</body>
+</html>
